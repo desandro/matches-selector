@@ -1,5 +1,5 @@
 /**
- * matchesSelector helper
+ * matchesSelector helper v0.1.0
  *
  * @augments {Object} this - global object
  * @name matchesSelector
