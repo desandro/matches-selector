@@ -1,12 +1,13 @@
 /**
  * matchesSelector polyfill
  *
- * @returns {Function} matchesSelector
+ * @augments {Object} this - global object
+ * @name matchesSelector
  *   @param {Element} elem
  *   @param {String} selector
  */
 
-this.matchesSelector = ( function( ElemProto ) {
+( function( global, ElemProto ) {
 
   var methods = [
     'matchesSelector',
@@ -30,23 +31,24 @@ this.matchesSelector = ( function( ElemProto ) {
   if ( matchesMethod ) {
     // use native matchesSelector method if available
     matchesSelector = function( elem, selector ) {
-      elem[ matchesMethod ]( selector );
+      return elem[ matchesMethod ]( selector );
     };
   } else {
     // fall back to using QSA
     // thx @jonathantneal https://gist.github.com/3062955
     matchesSelector = function( elem, selector ) {
 
+      // append to fragment if no parent
       if ( !elem.parentNode ) {
-        // append to fragment if no parent
         var fragment = document.createDocumentFragment();
         fragment.appendChild( elem );
       }
 
+      // match elem with all selected elems of parent
       var elems = elem.parentNode.querySelectorAll( selector );
       for ( var j=0, jLen = elems.length; j < jLen; j++ ) {
-        // if there is a match, return true
-        if ( elems[i] === elem ) {
+        // return true if match
+        if ( elems[j] === elem ) {
           return true;
         }
       }
@@ -56,6 +58,7 @@ this.matchesSelector = ( function( ElemProto ) {
 
   }
 
-  return matchesSelector;
+  // add to global namespace
+  global.matchesSelector = matchesSelector;
 
-})( Element.prototype );
+})( this, Element.prototype );
