@@ -1,5 +1,5 @@
 /**
- * matchesSelector polyfill
+ * matchesSelector helper
  *
  * @augments {Object} this - global object
  * @name matchesSelector
