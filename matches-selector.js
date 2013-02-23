@@ -1,5 +1,5 @@
 /**
- * matchesSelector helper v0.1.0
+ * matchesSelector helper v0.2.0
  *
  * @augments {Object} this - global object
  * @name matchesSelector
@@ -7,7 +7,11 @@
  *   @param {String} selector
  */
 
+/*jshint browser: true, strict: true, undef: true, unused: true */
+
 ( function( global, ElemProto ) {
+
+  'use strict';
 
   var methods = [
     'matchesSelector',
@@ -26,36 +30,63 @@
     }
   }
 
+  // ----- match ----- //
+
+  function match( elem, selector ) {
+    return elem[ matchesMethod ]( selector );
+  }
+
+
+  // ----- appendToFragment ----- //
+
+  function appendToFragment( elem ) {
+    var fragment = document.createDocumentFragment();
+    fragment.appendChild( elem );
+  }
+
+  // ----- query ----- //
+
+  // fall back to using QSA
+  // thx @jonathantneal https://gist.github.com/3062955
+  function query( elem, selector ) {
+    // append to fragment if no parent
+    if ( !elem.parentNode ) {
+      appendToFragment( elem );
+    }
+
+    // match elem with all selected elems of parent
+    var elems = elem.parentNode.querySelectorAll( selector );
+    for ( var j=0, jLen = elems.length; j < jLen; j++ ) {
+      // return true if match
+      if ( elems[j] === elem ) {
+        return true;
+      }
+    }
+    // otherwise return false
+    return false;
+  }
+
+  // ----- matchChild ----- //
+
+  function matchChild( elem, selector ) {
+    if ( !elem.parentNode ) {
+      appendToFragment( elem );
+    }
+    return match( elem, selector );
+  }
+
+  // ----- matchesSelector ----- //
+
   var matchesSelector;
 
   if ( matchesMethod ) {
-    // use native matchesSelector method if available
-    matchesSelector = function( elem, selector ) {
-      return elem[ matchesMethod ]( selector );
-    };
+    // IE9 supports matchesSelector, but doesn't work on orphaned elems
+    // check for that
+    var div = document.createElement('div');
+    var supportsOrphans = match( div, 'div' );
+    matchesSelector = supportsOrphans ? match : matchChild;
   } else {
-    // fall back to using QSA
-    // thx @jonathantneal https://gist.github.com/3062955
-    matchesSelector = function( elem, selector ) {
-
-      // append to fragment if no parent
-      if ( !elem.parentNode ) {
-        var fragment = document.createDocumentFragment();
-        fragment.appendChild( elem );
-      }
-
-      // match elem with all selected elems of parent
-      var elems = elem.parentNode.querySelectorAll( selector );
-      for ( var j=0, jLen = elems.length; j < jLen; j++ ) {
-        // return true if match
-        if ( elems[j] === elem ) {
-          return true;
-        }
-      }
-      // otherwise return false
-      return false;
-    };
-
+    matchesSelector = query;
   }
 
   // add to global namespace

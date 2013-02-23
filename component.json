@@ -1,7 +1,7 @@
 {
   "name": "matches-selector-helper",
   "main": "matches-selector.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "dependencies": {
   }
 }
