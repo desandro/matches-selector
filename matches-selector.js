@@ -13,29 +13,29 @@
 
   'use strict';
 
-  var methods = [
-    'matchesSelector',
-    'webkitMatchesSelector',
-    'mozMatchesSelector',
-    'msMatchesSelector',
-    'oMatchesSelector'
-  ];
+  var matchesMethod = ( function() {
 
-  var matchesMethod;
-  for ( var i=0, len = methods.length; i < len; i++ ) {
-    var method = methods[i];
-    if ( ElemProto[ method ] ) {
-      matchesMethod = method;
-      break;
+    var methods = [
+      'matchesSelector',
+      'webkitMatchesSelector',
+      'mozMatchesSelector',
+      'msMatchesSelector',
+      'oMatchesSelector'
+    ];
+
+    for ( var i=0, len = methods.length; i < len; i++ ) {
+      var method = methods[i];
+      if ( ElemProto[ method ] ) {
+        return method;
+      }
     }
-  }
+  })();
 
   // ----- match ----- //
 
   function match( elem, selector ) {
     return elem[ matchesMethod ]( selector );
   }
-
 
   // ----- appendToFragment ----- //
 
@@ -56,9 +56,9 @@
 
     // match elem with all selected elems of parent
     var elems = elem.parentNode.querySelectorAll( selector );
-    for ( var j=0, jLen = elems.length; j < jLen; j++ ) {
+    for ( var i=0, len = elems.length; i < len; i++ ) {
       // return true if match
-      if ( elems[j] === elem ) {
+      if ( elems[i] === elem ) {
         return true;
       }
     }
