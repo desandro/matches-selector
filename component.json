@@ -2,6 +2,7 @@
   "name": "matches-selector-helper",
   "main": "matches-selector.js",
   "version": "0.2.0",
-  "dependencies": {
+  "devDependencies": {
+    "qunit": "~1.10"
   }
 }
