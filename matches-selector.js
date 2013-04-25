@@ -1,5 +1,5 @@
 /**
- * matchesSelector helper v0.2.0
+ * matchesSelector helper v1.0.0
  *
  * @augments {Object} this - global object
  * @name matchesSelector
@@ -8,6 +8,7 @@
  */
 
 /*jshint browser: true, strict: true, undef: true, unused: true */
+/*global define: false */
 
 ( function( global, ElemProto ) {
 
@@ -89,7 +90,15 @@
     matchesSelector = query;
   }
 
-  // add to global namespace
-  global.matchesSelector = matchesSelector;
+  // transport
+  if ( typeof define === 'function' && define.amd ) {
+    // AMD
+    define( function() {
+      return matchesSelector;
+    });
+  } else {
+    // browser global
+    window.matchesSelector = matchesSelector;
+  }
 
 })( this, Element.prototype );
