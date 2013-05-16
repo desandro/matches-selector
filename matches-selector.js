@@ -1,7 +1,6 @@
 /**
- * matchesSelector helper v1.0.0
+ * matchesSelector helper v1.0.1
  *
- * @augments {Object} this - global object
  * @name matchesSelector
  *   @param {Element} elem
  *   @param {String} selector
