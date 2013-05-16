@@ -15,17 +15,16 @@
   'use strict';
 
   var matchesMethod = ( function() {
+    // check un-prefixed
+    if ( ElemProto.matchesSelector ) {
+      return 'matchesSelector';
+    }
+    // check vendor prefixes
+    var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];
 
-    var methods = [
-      'matchesSelector',
-      'webkitMatchesSelector',
-      'mozMatchesSelector',
-      'msMatchesSelector',
-      'oMatchesSelector'
-    ];
-
-    for ( var i=0, len = methods.length; i < len; i++ ) {
-      var method = methods[i];
+    for ( var i=0, len = prefixes.length; i < len; i++ ) {
+      var prefix = prefixes[i];
+      var method = prefix + 'MatchesSelector';
       if ( ElemProto[ method ] ) {
         return method;
       }
