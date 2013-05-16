@@ -39,7 +39,11 @@
 
   // ----- appendToFragment ----- //
 
-  function appendToFragment( elem ) {
+  function checkParent( elem ) {
+    // not needed if already has parent
+    if ( elem.parentNode ) {
+      return;
+    }
     var fragment = document.createDocumentFragment();
     fragment.appendChild( elem );
   }
@@ -50,9 +54,7 @@
   // thx @jonathantneal https://gist.github.com/3062955
   function query( elem, selector ) {
     // append to fragment if no parent
-    if ( !elem.parentNode ) {
-      appendToFragment( elem );
-    }
+    checkParent( elem );
 
     // match elem with all selected elems of parent
     var elems = elem.parentNode.querySelectorAll( selector );
@@ -69,9 +71,7 @@
   // ----- matchChild ----- //
 
   function matchChild( elem, selector ) {
-    if ( !elem.parentNode ) {
-      appendToFragment( elem );
-    }
+    checkParent( elem );
     return match( elem, selector );
   }
 
