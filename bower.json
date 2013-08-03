@@ -4,6 +4,6 @@
   "description": "matchesSelector helper",
   "main": "matches-selector.js",
   "devDependencies": {
-    "qunit": "~1.10"
+    "qunit": "1.x"
   }
 }
