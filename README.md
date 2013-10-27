@@ -17,3 +17,11 @@ Install matchesSelector as [Bower component](http://bower.io)
 ``` bash
 bower install desandro/matches-selector
 ```
+
+## Component
+
+Install matchesSelector via [component](http://github.com/component/component)
+
+``` bash
+component install desandro/matches-selector
+```
