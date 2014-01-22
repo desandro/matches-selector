@@ -17,3 +17,7 @@ Install matchesSelector as [Bower component](http://bower.io)
 ``` bash
 bower install desandro/matches-selector
 ```
+
+## MIT license
+
+matchesSelector is released under the [MIT license](http://desandro.mit-license.org)
