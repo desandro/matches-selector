@@ -10,7 +10,9 @@ matchesSelector( myElem, 'div.my-hawt-selector' );
 // this DOES NOT polyfill myElem.matchesSelector
 ```
 
-## Package managers
+## Install
+
+Download [matches-selector.js](matches-selector.js)
 
 Install with [:bird: Bower](http://bower.io)
 
@@ -22,6 +24,12 @@ Install with [:nut_and_bolt: component](https://github.com/component/component)
 
 ``` bash
 component install desandro/matches-selector
+```
+
+Install with npm
+
+``` bash
+npm install desandro/matches-selector
 ```
 
 ## MIT license
