@@ -7,7 +7,7 @@
 /*jshint browser: true, strict: true, undef: true, unused: true */
 /*global define: false */
 
-( function( global, ElemProto ) {
+( function( ElemProto ) {
 
   'use strict';
 
@@ -100,4 +100,4 @@
     window.matchesSelector = matchesSelector;
   }
 
-})( this, Element.prototype );
+})( Element.prototype );
