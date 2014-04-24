@@ -1,11 +1,11 @@
 /**
- * matchesSelector v1.0.1
+ * matchesSelector v1.0.2
  * matchesSelector( element, '.selector' )
  * MIT license
  */
 
 /*jshint browser: true, strict: true, undef: true, unused: true */
-/*global define: false */
+/*global define: false, module: false */
 
 ( function( ElemProto ) {
 
