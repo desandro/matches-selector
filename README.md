@@ -17,7 +17,7 @@ Download [matches-selector.js](matches-selector.js)
 Install with [:bird: Bower](http://bower.io)
 
 ``` bash
-bower install desandro/matches-selector
+bower install matches-selector
 ```
 
 Install with [:nut_and_bolt: component](https://github.com/component/component)
