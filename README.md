@@ -14,7 +14,7 @@ matchesSelector( myElem, 'div.my-hawt-selector' );
 
 Download [matches-selector.js](https://github.com/desandro/matches-selector/raw/master/matches-selector.js)
 
-Install with [Bower](http://bower.io): bower install matches-selector
+Install with [Bower](http://bower.io): `bower install matches-selector`
 
 [Install with npm](https://www.npmjs.org/package/desandro-matches-selector): `npm install desandro-matches-selector`
 
