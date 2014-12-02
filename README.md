@@ -12,25 +12,13 @@ matchesSelector( myElem, 'div.my-hawt-selector' );
 
 ## Install
 
-Download [matches-selector.js](matches-selector.js)
+Download [matches-selector.js](https://github.com/desandro/matches-selector/raw/master/matches-selector.js)
 
-Install with [:bird: Bower](http://bower.io)
+Install with [Bower](http://bower.io): bower install matches-selector
 
-``` bash
-bower install desandro/matches-selector
-```
+[Install with npm](https://www.npmjs.org/package/desandro-matches-selector): `npm install desandro-matches-selector`
 
-Install with [:nut_and_bolt: component](https://github.com/component/component)
-
-``` bash
-component install desandro/matches-selector
-```
-
-Install with npm
-
-``` bash
-npm install desandro/matches-selector
-```
+Install with [Component](https://github.com/component/component): `component install desandro/matches-selector`
 
 ## MIT license
 
