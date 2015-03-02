@@ -1,5 +1,5 @@
 /**
- * matchesSelector v1.0.2
+ * matchesSelector v1.0.3
  * matchesSelector( element, '.selector' )
  * MIT license
  */

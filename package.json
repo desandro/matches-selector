@@ -1,7 +1,7 @@
 {
   "name": "matches-selector",
-  "version": "1.0.2",
-  "description": "matchesSelector helper",
+  "version": "1.0.3",
+  "description": "matches/matchesSelector helper",
   "main": "matches-selector.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +17,8 @@
   "homepage": "https://github.com/desandro/matches-selector",
   "keywords": [
     "DOM",
-    "matchesSelector"
+    "matchesSelector",
+    "matches"
   ],
   "author": "David DeSandro"
 }
