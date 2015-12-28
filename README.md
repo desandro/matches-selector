@@ -18,8 +18,6 @@ Install with [Bower](http://bower.io): `bower install matches-selector`
 
 [Install with npm](https://www.npmjs.org/package/desandro-matches-selector): `npm install desandro-matches-selector`
 
-Install with [Component](https://github.com/component/component): `component install desandro/matches-selector`
-
 ## Browser support
 
 IE10+, all modern browsers
