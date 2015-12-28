@@ -20,6 +20,12 @@ Install with [Bower](http://bower.io): `bower install matches-selector`
 
 Install with [Component](https://github.com/component/component): `component install desandro/matches-selector`
 
+## Browser support
+
+IE10+, all modern browsers
+
+Use [matchesSelector v1](https://github.com/desandro/matches-selector/releases/tag/v1.0.3) for IE8 and IE9 support.
+
 ## MIT license
 
 matchesSelector is released under the [MIT license](http://desandro.mit-license.org)

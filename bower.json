@@ -1,6 +1,6 @@
 {
   "name": "matches-selector",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "matches/matchesSelector helper",
   "main": "matches-selector.js",
   "devDependencies": {
@@ -28,7 +28,6 @@
     "test",
     "tests",
     "tests.*",
-    "component.json",
     "package.json"
   ]
 }
