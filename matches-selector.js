@@ -1,5 +1,5 @@
 /**
- * matchesSelector v2.0.0
+ * matchesSelector v2.0.1
  * matchesSelector( element, '.selector' )
  * MIT license
  */
@@ -12,7 +12,7 @@
   // universal module definition
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( factory() );
+    define( factory );
   } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory();

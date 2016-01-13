@@ -1,13 +1,11 @@
 # matchesSelector helper
 
-[`matches`/`matchesSelector`](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches) is pretty hot :fire:, but has [vendor-prefix baggage](http://caniuse.com/#feat=matchesselector) :handbag: :pouch:. This helper function takes care of that, without augmenting `Element.prototype`.
+[`matches`/`matchesSelector`](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches) is pretty hot :fire:, but has [vendor-prefix baggage](http://caniuse.com/#feat=matchesselector) :handbag: :pouch:. This helper function takes care of that, without polyfilling or augmenting `Element.prototype`.
 
 ``` js
 matchesSelector( elem, selector );
-
+// for example
 matchesSelector( myElem, 'div.my-hawt-selector' );
-
-// this DOES NOT polyfill myElem.matchesSelector
 ```
 
 ## Install
