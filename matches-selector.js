@@ -25,7 +25,7 @@
   'use strict';
 
   var matchesMethod = ( function() {
-    var ElemProto = Element.prototype;
+    var ElemProto = window.Element.prototype;
     // check for the standard method name first
     if ( ElemProto.matches ) {
       return 'matches';
