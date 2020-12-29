@@ -1,3 +1,9 @@
+**DEPRECATION NOTICE**
+
+As of December 2020, all major browsers natively support [.matches()](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches). The last hold-out was IE11.
+
+This repo is now in archive mode. Use `matches()` for any future development.
+
 # matchesSelector helper
 
 [`matches`/`matchesSelector`](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches) is pretty hot :fire:, but has [vendor-prefix baggage](http://caniuse.com/#feat=matchesselector) :handbag: :pouch:. This helper function takes care of that, without polyfilling or augmenting `Element.prototype`.
